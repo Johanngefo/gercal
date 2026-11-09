@@ -1,0 +1,151 @@
+.gercal {
+    padding: 12px;
+    overflow: auto;
+}
+
+.vc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.vc-header h2 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.vc-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 4px;
+}
+
+.vc-weekday {
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-muted);
+    padding: 8px 0;
+}
+
+.vc-day {
+    min-height: 110px;
+    min-width: 0;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 6px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.vc-day-clickable {
+    cursor: pointer;
+}
+
+.vc-day-clickable:hover {
+    background-color: var(--background-modifier-hover);
+}
+
+.vc-day-number {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.vc-entry-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 3px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Kalenderpunkte nach Status */
+.vc-entry-dot-none { background: #9b72cf; }
+.vc-entry-dot-G { background: #ec4899; }
+.vc-entry-dot-T { background: #166534; }
+.vc-entry-dot-S { background: #888888; }
+.vc-entry-dot-W { background: #ef4444; }
+.vc-entry-dot-D { background: #f97316; }
+
+.vc-entry-dot:hover {
+    transform: scale(1.4);
+}
+
+.vc-entry:hover {
+    opacity: 0.8;
+}
+
+.vc-empty {
+    min-height: 110px;
+}
+
+/* Vollansicht (Kalender in der Hauptarbeitsfläche) */
+.vc-full .vc-day,
+.vc-full .vc-empty {
+    min-height: 140px;
+}
+
+.vc-timed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 4px;
+}
+
+.vc-entry-chip {
+    --vc-color: #9b72cf;
+    --vc-bg: rgba(155, 114, 207, 0.22);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 6px;
+    padding: 2px 5px;
+    border-left: 3px solid var(--vc-color);
+    border-radius: 3px;
+    background-color: var(--vc-bg);
+    font-size: 0.8em;
+    line-height: 1.3;
+    cursor: pointer;
+    min-width: 0;
+}
+
+.vc-entry-chip:hover {
+    filter: brightness(1.15);
+}
+
+.vc-chip-time {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.vc-chip-duration {
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.vc-chip-title {
+    flex-basis: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.vc-chip-status-none { --vc-color: #9b72cf; --vc-bg: rgba(155, 114, 207, 0.22); }
+.vc-chip-status-G { --vc-color: #ec4899; --vc-bg: rgba(236, 72, 153, 0.25); }
+.vc-chip-status-T { --vc-color: #166534; --vc-bg: rgba(22, 101, 52, 0.25); }
+.vc-chip-status-S { --vc-color: #888888; --vc-bg: rgba(136, 136, 136, 0.25); }
+.vc-chip-status-W { --vc-color: #ef4444; --vc-bg: rgba(239, 68, 68, 0.25); }
+.vc-chip-status-D { --vc-color: #f97316; --vc-bg: rgba(249, 115, 22, 0.25); }
+
+/* Transparente Datumsmarkierungen im Editor und in der Leseansicht */
+.vc-date-highlight {
+    border-radius: 3px;
+    padding: 0 1px;
+}
+
+.vc-date-status-none { background-color: rgba(155, 114, 207, 0.25); }
+.vc-date-status-G { background-color: rgba(236, 72, 153, 0.28); }
+.vc-date-status-T { background-color: rgba(22, 101, 52, 0.22); }
+.vc-date-status-S { background-color: rgba(136, 136, 136, 0.25); }
+.vc-date-status-W { background-color: rgba(239, 68, 68, 0.25); }
